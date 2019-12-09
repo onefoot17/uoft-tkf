@@ -1,0 +1,177 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important; }
+
+button {
+  background: none;
+  color: inherit;
+  outline: 0; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+q {
+  display: inline;
+  font-style: italic; }
+
+q:before {
+  content: '"';
+  font-style: normal; }
+
+q:after {
+  content: '"';
+  font-style: normal; }
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="search"],
+input[type="password"] {
+  appearance: none;
+  border-radius: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+body,
+html {
+  font-size: 10px;
+  width: 100%; }
+
+:root {
+  --black: #000000;
+  --black--rgb: 0, 0, 0;
+  --blue-very-light: #d4e2f5;
+  --blue-light: #336699;
+  --blue-light--rgb: 51, 102, 153;
+  --blue-medium: #008bb0;
+  --blue-medium--rgb: 0, 139, 176;
+  --blue-dark: #002a5c;
+  --blue-dark--rgb: 0, 42, 92;
+  --plum-deep: #68235F;
+  --purple-deep: #6C1960;
+  --gray-light: #cecfcb;
+  --gray-medium: #999999;
+  --gray-dark: #666666;
+  --gray-very-dark: #343434;
+  --green-very-light: #dae5cd;
+  --green-light: #99cc99;
+  --green-medium: #339933;
+  --green-deep-forest: #1F3D0C;
+  --green-deep-hunter: #2A4B2F;
+  --green-deep-hunter--rgb: 42, 75, 47;
+  --gold-very-light: #FAFAD2;
+  --gold-light: #ffcc33;
+  --gold-medium: #ffe498;
+  --tan: #D2B48C;
+  --white--rgb: 255, 255, 255;
+  --white: #ffffff;
+  --margin: 1rem;
+  --padding: 1rem; }
