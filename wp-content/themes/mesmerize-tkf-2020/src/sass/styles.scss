@@ -181,3 +181,188 @@ input, select, textarea {
 .ufaq-back-to-top {
     padding-top: 20px;
 } */
+
+html,
+body {
+    background-color: var(--gray);
+}
+
+body {
+    color: var(--green);
+}
+
+h1,
+h1.title,
+h2,
+h3,
+h4,
+h5,
+.comment-author .fn, h6 {
+    font-family: $font-family;
+    letter-spacing: normal;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+.button {
+    letter-spacing: normal;
+}
+
+.header-top-bar {
+    background-color: var(--brown);
+}
+
+.top-bar-field,
+.top-bar-field i.fa,
+.top-bar-social-icons a i.fa {
+    color: var(--green);
+}
+
+.navigation-bar {
+    @include transition;
+}
+
+.navigation-bar.fixto-fixed {
+    @include background-color-rgba( var(--gray--rgb), 0.8 );
+}
+
+a {
+    @include transition;
+}
+
+a.text-logo {
+    line-height: 1;
+}
+
+a.text-logo,
+a.text-logo:visited,
+a.text-logo:hover {
+    color: var(--gray);
+    font-size: 1.8rem;
+}
+
+.fixto-fixed a.text-logo,
+.fixto-fixed a.text-logo:visited {
+    color: var(--green);
+}
+
+a.text-logo:hover,
+.fixto-fixed a.text-logo:hover {
+    color: var(--brown);
+}
+
+ul.dropdown-menu {
+    // justify-content: flex-end;
+
+    li a {
+        color: var(--white);
+        letter-spacing: normal;
+        text-transform: initial;
+    }
+        
+    .sub-menu {
+        background-color: var(--gray);
+
+        li a {
+            color: var(--green);
+        }
+    }
+    
+    &.active-line-bottom > li:not(.current-menu-item):not(.current_page_item):hover > a,
+    &.default > li:not(.current-menu-item):not(.current_page_item):hover > a {
+        color: var(--brown);
+    }
+}
+
+.fixto-fixed ul.dropdown-menu.active-line-bottom > li:not(.current-menu-item):not(.current_page_item) > a {
+    color: var(--green);
+}
+
+.fixto-fixed ul.dropdown-menu.active-line-bottom > li:not(.current-menu-item):not(.current_page_item):hover > a {
+    color: var(--brown);
+}
+
+h1.hero-title {
+    @include text-shadow-rgba(
+        1px,
+        1px,
+        3px,
+        var(--green--rgb), 0.8
+    );
+
+    color: var(--gray);
+}
+
+.site > {
+    .page-content,
+    .content {
+        background-color: var(--gray);
+    }
+}
+
+.content-section-spacing {
+    background-color: var(--gray);
+    
+    &#overlappable-1 {
+        background-color: var(--gray) !important;
+
+        h5 {
+            color: var(--green);
+            font-size: 1.2rem;
+        }
+    }
+}
+
+i.fa.icon.reverse.color,
+i.fa.icon.reverse.color1,
+.button.color-white.outline,
+.button.color1 {
+    background-color: var(--brown);
+    border: none;
+    color: var(--green);
+
+    &:hover {
+        background-color: var(--green);
+        color: var(--brown);
+    }
+}
+
+.navigation-wrapper > .row.basis-auto {
+    // align-items: flex-start;
+}
+
+.main_menu_col {
+    // justify-content: flex-start;
+}
+
+.logo_col {
+    padding: .85rem;
+}
+
+.read-more {
+    color: var(--green);
+}
+
+#news {
+    background-attachment: fixed;
+    background-image: url(http://tkf.local/wp-content/uploads/2018/03/UofT14224_20171103_UniversityofTorontoGateSign_001-scr.jpg);
+    padding: 0;
+    
+    > div {
+        @include background-color-rgba( var(--green--rgb), 0.8 );
+
+        padding: $padding*2;
+    }
+
+    h2,
+    .lead {
+        color: var(--gray);
+    }
+}
+
+.footer {
+    background-color: var(--gray);
+    display: none;
+}

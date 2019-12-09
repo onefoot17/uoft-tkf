@@ -130,3 +130,8 @@
     background-color: $color-hex;
     background-color: rgba( $color-hex, $color-opacity );
 }
+
+@mixin text-shadow-rgba( $x, $y, $blur, $color-hex, $color-opacity ) {
+    text-shadow: $x $y $blur $color-hex;
+    text-shadow: $x $y $blur rgba( $color-hex, $color-opacity );
+}
