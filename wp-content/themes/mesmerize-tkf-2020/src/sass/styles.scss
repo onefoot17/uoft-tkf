@@ -189,6 +189,7 @@ body {
 
 body {
     color: var(--green);
+    font-family: $font-family;
 }
 
 h1,
@@ -254,11 +255,12 @@ a.text-logo:hover,
 }
 
 ul.dropdown-menu {
-    // justify-content: flex-end;
+    align-items: center;
 
     li a {
         color: var(--white);
         letter-spacing: normal;
+        line-height: 1;
         text-transform: initial;
     }
         
@@ -365,4 +367,34 @@ i.fa.icon.reverse.color1,
 .footer {
     background-color: var(--gray);
     display: none;
+}
+
+.twitter a:before {
+    // content: fa-content($fa-var-twitter);
+}
+
+ul.dropdown-menu li.facebook {
+    
+    a {
+        font-family: FontAwesome;
+        font-size: 0;
+    }
+
+    a:before {
+        content: "\f230";
+        font-size: 2rem;
+    }
+}
+
+ul.dropdown-menu li.twitter {
+    
+    a {
+        font-family: FontAwesome;
+        font-size: 0;
+    }
+
+    a:before {
+        content: "\f081";
+        font-size: 2rem;
+    }
 }
