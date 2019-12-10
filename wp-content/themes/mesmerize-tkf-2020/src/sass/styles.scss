@@ -207,6 +207,10 @@ h5 {
     font-size: 1.2rem;
 }
 
+a {
+    @include transition;
+}
+
 .button {
     letter-spacing: normal;
 }
@@ -223,14 +227,10 @@ h5 {
 
 .navigation-bar {
     @include transition;
-}
 
-.navigation-bar.fixto-fixed {
-    @include background-color-rgba( var(--gray--rgb), 0.9 );
-}
-
-a {
-    @include transition;
+    &.fixto-fixed {
+        @include background-color-rgba( var(--gray--rgb), 0.9 );
+    }
 }
 
 a.text-logo {
@@ -242,68 +242,108 @@ a.text-logo {
     );
 
     color: var(--gray);
-    line-height: 1;
-}
-
-a.text-logo,
-a.text-logo:visited,
-a.text-logo:hover,
-.fixto-fixed a.text-logo:hover {
     font-size: 1.8rem;
-}
+    line-height: 1;
 
-.fixto-fixed a.text-logo,
-.fixto-fixed a.text-logo:visited {
-    color: var(--green);
-    text-shadow: none;
-}
+    &:visited,
+    &:hover {
+        @extend .text-logo;
+    }
 
-a.text-logo:hover,
-.fixto-fixed a.text-logo:hover {
-    color: var(--brown-light);
+    &:hover {
+        color: var(--brown-light);
+    }
+
+    .fixto-fixed & {
+        color: var(--green);
+        text-shadow: none;
+        
+        &:visited,
+        &:hover {
+            @extend .text-logo;
+        }
+        
+        &:hover {
+            color: var(--brown-light);
+        }
+    }
 }
 
 ul.dropdown-menu {
     align-items: center;
 
-    li a {
-        @include text-shadow-rgba(
-            1px,
-            1px,
-            3px,
-            var(--green--rgb), 0.8
-        );
+    li {
+        a {
+            @include text-shadow-rgba(
+                1px,
+                1px,
+                3px,
+                var(--green--rgb), 0.8
+            );
 
-        color: var(--white);
-        letter-spacing: normal;
-        line-height: 1;
-        text-transform: initial;
-    }
-        
-    .sub-menu {
-        background-color: var(--gray);
+            color: var(--white);
+            letter-spacing: normal;
+            line-height: 1;
+            text-transform: initial;
+        }
+            
+        .sub-menu {
+            background-color: var(--gray);
 
-        li a {
-            color: var(--green);
+            li a {
+                color: var(--green);
+            }
+        }
+
+        &.facebook {
+            a {
+                font-family: FontAwesome;
+                font-size: 0;
+            }
+
+            a:before {
+                content: "\f230";
+                font-size: 2rem;
+            }
+        }
+
+        &.twitter {
+            a {
+                font-family: FontAwesome;
+                font-size: 0;
+            }
+
+            a:before {
+                content: "\f081";
+                font-size: 2rem;
+            }
         }
     }
     
-    &.active-line-bottom > li:not(.current-menu-item):not(.current_page_item):hover > a,
-    &.default > li:not(.current-menu-item):not(.current_page_item):hover > a {
-        color: var(--brown-light);
+    &.active-line-bottom > li:not(.current-menu-item):not(.current_page_item),
+    &.default > li:not(.current-menu-item):not(.current_page_item) {
+        &:hover > a {
+            color: var(--brown-light);
+        }
+        
+        > a {
+            .fixto-fixed & {
+                color: var(--green);
+            }
+        }
+        
+        &:hover > a {
+            .fixto-fixed & {
+                color: var(--brown-light);
+            }
+        }
     }
-}
-
-.fixto-fixed ul.dropdown-menu.active-line-bottom > li:not(.current-menu-item):not(.current_page_item) > a {
-    color: var(--green);
-}
-
-.fixto-fixed ul.dropdown-menu.active-line-bottom > li:not(.current-menu-item):not(.current_page_item):hover > a {
-    color: var(--brown-light);
-}
-
-.fixto-fixed ul.dropdown-menu li a {
-    text-shadow: none;
+    
+    li a {
+        .fixto-fixed & {
+            text-shadow: none;
+        }
+    }
 }
 
 h1.hero-title,
@@ -380,29 +420,4 @@ i.fa.icon.reverse.color1,
 .footer {
     background-color: var(--gray);
     display: none;
-}
-
-ul.dropdown-menu li.facebook {
-    
-    a {
-        font-family: FontAwesome;
-        font-size: 0;
-    }
-
-    a:before {
-        content: "\f230";
-        font-size: 2rem;
-    }
-}
-
-ul.dropdown-menu li.twitter {
-    a {
-        font-family: FontAwesome;
-        font-size: 0;
-    }
-
-    a:before {
-        content: "\f081";
-        font-size: 2rem;
-    }
 }
