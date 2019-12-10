@@ -395,13 +395,21 @@ i.fa.icon.reverse.color,
 i.fa.icon.reverse.color1,
 .button.color-white.outline,
 .button.color1 {
-    background-color: var(--brown);
+    @include box-shadow-rgba(
+        0px,
+        0px,
+        3px,
+        0px,
+        var(--green-dark--rgb), 0.8
+    );
+
+    background-color: var(--green);
     border: none;
-    color: var(--green);
+    color: var(--white);
 
     &:hover {
-        background-color: var(--green);
-        color: var(--brown-light);
+        background-color: var(--brown-light);
+        color: var(--green-dark);
     }
 }
 

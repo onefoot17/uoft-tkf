@@ -131,6 +131,11 @@
     background-color: rgba( $color-hex, $color-opacity );
 }
 
+@mixin box-shadow-rgba( $x, $y, $blur, $spread, $color-hex, $color-opacity ) {
+    box-shadow: $x $y $blur $spread $color-hex;
+    box-shadow: $x $y $blur $spread rgba( $color-hex, $color-opacity );
+}
+
 @mixin text-shadow-rgba( $x, $y, $blur, $color-hex, $color-opacity ) {
     text-shadow: $x $y $blur $color-hex;
     text-shadow: $x $y $blur rgba( $color-hex, $color-opacity );
