@@ -229,7 +229,9 @@ a {
     @include transition;
 
     &.fixto-fixed {
-        @include background-color-rgba( var(--gray--rgb), 0.9 );
+        @include background-color-rgba(
+            var(--gray--rgb), 0.9
+        );
     }
 }
 
@@ -238,7 +240,7 @@ a.text-logo {
         1px,
         1px,
         3px,
-        var(--green--rgb), 0.8
+        var(--green-dark--rgb), 0.8
     );
 
     color: var(--gray);
@@ -278,7 +280,7 @@ ul.dropdown-menu {
                 1px,
                 1px,
                 3px,
-                var(--green--rgb), 0.8
+                var(--green-dark--rgb), 0.8
             );
 
             color: var(--white);
@@ -295,28 +297,39 @@ ul.dropdown-menu {
             }
         }
 
-        &.facebook {
+        &.contact,
+        &.facebook,
+        &.twitter,
+        &.instagram {
             a {
-                font-family: FontAwesome;
                 font-size: 0;
-            }
-
-            a:before {
-                content: "\f230";
-                font-size: 2rem;
+                
+                &:before {
+                    font-family: FontAwesome;
+                    font-size: 2rem;
+                }
             }
         }
 
-        &.twitter {
-            a {
-                font-family: FontAwesome;
-                font-size: 0;
-            }
+        &.contact a {
+            font-size: initial;
 
-            a:before {
-                content: "\f081";
-                font-size: 2rem;
+            &:before {
+                content: "\f0e0";
+                padding-right: $padding/2;
             }
+        }
+
+        &.facebook a:before {
+            content: "\f230";
+        }
+
+        &.twitter a:before {
+            content: "\f081";
+        }
+
+        &.instagram a:before {
+            content: "\f16d";
         }
     }
     
@@ -352,7 +365,7 @@ p.header-subtitle {
         1px,
         1px,
         3px,
-        var(--green--rgb), 0.8
+        var(--green-dark--rgb), 0.8
     );
 
     color: var(--gray);
@@ -406,7 +419,9 @@ i.fa.icon.reverse.color1,
     padding: 0;
     
     > div {
-        @include background-color-rgba( var(--green--rgb), 0.8 );
+        @include background-color-rgba(
+            var(--green--rgb), 0.8
+        );
 
         padding: $padding*2;
     }

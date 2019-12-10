@@ -1,8 +1,8 @@
 // Colours
 $black: #000000 !default;
 $gray: #f1f1f1 !default;
-$green: #1F3D0C !default;
-$green-light: #3fb0ac !default;
+$green: #29520e !default;
+$green-dark: #1F3D0C !default;
 $brown: #ffb600 !default;
 $brown-light: #d56c06 !default;
 $white: #ffffff !default;
@@ -24,7 +24,8 @@ $padding: 1rem !default;
     --gray--rgb: #{ hex-to-rgb( $gray ) };
     --green: #{ $green };
     --green--rgb: #{ hex-to-rgb( $green ) };
-    --green-light: #{ $green-light };
+    --green-dark: #{ $green-dark };
+    --green-dark--rgb: #{ hex-to-rgb( $green-dark ) };
     --brown: #{ $brown };
     --brown-light: #{ $brown-light };
     --brown--rgb: #{ hex-to-rgb( $brown ) };
