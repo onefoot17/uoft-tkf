@@ -226,7 +226,7 @@ h5 {
 }
 
 .navigation-bar.fixto-fixed {
-    @include background-color-rgba( var(--gray--rgb), 0.8 );
+    @include background-color-rgba( var(--gray--rgb), 0.9 );
 }
 
 a {
@@ -234,30 +234,46 @@ a {
 }
 
 a.text-logo {
+    @include text-shadow-rgba(
+        1px,
+        1px,
+        3px,
+        var(--green--rgb), 0.8
+    );
+
+    color: var(--gray);
     line-height: 1;
 }
 
 a.text-logo,
 a.text-logo:visited,
-a.text-logo:hover {
-    color: var(--gray);
+a.text-logo:hover,
+.fixto-fixed a.text-logo:hover {
     font-size: 1.8rem;
 }
 
 .fixto-fixed a.text-logo,
 .fixto-fixed a.text-logo:visited {
     color: var(--green);
+    text-shadow: none;
 }
 
 a.text-logo:hover,
 .fixto-fixed a.text-logo:hover {
-    color: var(--brown);
+    color: var(--brown-light);
 }
 
 ul.dropdown-menu {
     align-items: center;
 
     li a {
+        @include text-shadow-rgba(
+            1px,
+            1px,
+            3px,
+            var(--green--rgb), 0.8
+        );
+
         color: var(--white);
         letter-spacing: normal;
         line-height: 1;
@@ -274,7 +290,7 @@ ul.dropdown-menu {
     
     &.active-line-bottom > li:not(.current-menu-item):not(.current_page_item):hover > a,
     &.default > li:not(.current-menu-item):not(.current_page_item):hover > a {
-        color: var(--brown);
+        color: var(--brown-light);
     }
 }
 
@@ -283,10 +299,15 @@ ul.dropdown-menu {
 }
 
 .fixto-fixed ul.dropdown-menu.active-line-bottom > li:not(.current-menu-item):not(.current_page_item):hover > a {
-    color: var(--brown);
+    color: var(--brown-light);
 }
 
-h1.hero-title {
+.fixto-fixed ul.dropdown-menu li a {
+    text-shadow: none;
+}
+
+h1.hero-title,
+p.header-subtitle {
     @include text-shadow-rgba(
         1px,
         1px,
@@ -327,16 +348,8 @@ i.fa.icon.reverse.color1,
 
     &:hover {
         background-color: var(--green);
-        color: var(--brown);
+        color: var(--brown-light);
     }
-}
-
-.navigation-wrapper > .row.basis-auto {
-    // align-items: flex-start;
-}
-
-.main_menu_col {
-    // justify-content: flex-start;
 }
 
 .logo_col {
@@ -369,10 +382,6 @@ i.fa.icon.reverse.color1,
     display: none;
 }
 
-.twitter a:before {
-    // content: fa-content($fa-var-twitter);
-}
-
 ul.dropdown-menu li.facebook {
     
     a {
@@ -387,7 +396,6 @@ ul.dropdown-menu li.facebook {
 }
 
 ul.dropdown-menu li.twitter {
-    
     a {
         font-family: FontAwesome;
         font-size: 0;
