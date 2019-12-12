@@ -2,193 +2,13 @@
 @import '_variables';
 @import '_mixins';
 
-/*Header Gradient Overlay*/
-/* .header-homepage .background-overlay {
-    background: linear-gradient(135deg , rgba(116, 102, 234, 0.8) 0%, rgba(177, 51, 179, 0.8) 100%);
-}
-
-.button.color2 {
-    color: #fff;
-    background-color: #005bb0;
-    border-color: #eee;
-}
-.button.white.outline {
-    background: #002a5b;
-    color: #fff;
-    border-color: #eee;
-}
-
-.button.buttond1
-{
-    color: #fff;
-    background-color: #b000ab;
-    border-color: #b000ab;
-}
-
-.button.buttond2
-{
-    color: #fff;
-    background-color: #2600bf;
-    border-color: #2600bf;
-}
-
-i.fa.icon.reverse.color1 {
-    background-color: #c19434;
-}
-
-.button {
-    background-color: #c19434;
-    border: 2px solid #c19434;
-}
-
-.button.color1 {
-    color: #fff;
-    background-color: #005bb0;
-    border-color: #eee;
-}
-
-.no-comments {
-	display:none;
-}
-
-.comments-form {
-	display:none;
-}
-
-.post-meta .fa-user, 
-.post-meta .fa-comment-o {
-	display:none;
-}
-
-.post-meta a:nth-child(2){
-	display:none;
-}
-
-.post-meta span:nth-child(8){
-	display:none;
-}
-
-.footer-contact-boxes, .footer-contact-boxes .footer-bg-accent {
-    background-color: #7b7b86;
-}
-	
-.copyright {
-	display:none;
-}
-
-h1, h1.title, h2, h3, h4, h5, h6 {
-    font-family: Muli,sans-serif;
-    font-weight: 700;
-    color: #3C424F;
-    text-rendering: optimizeLegibility;
-    margin-bottom: 16px;
-}
-
-.single-post .content h1 {
-	color: #8f8fb1;
-}
-
+/* html,
 body {
-	color: #534c69;
-}
-
-body.home {
-	color: #8E9DAE;
-}
-
-a, a:hover {
-    color: #0089ff;
-    font-weight: bold;
-}
-
-hr {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-td a {
-	text-decoration-line: none;
-}
-
-img.desaturate {
-    filter: grayscale(0%);
-    opacity: 1;
-    transition: 1s all;
-}
-
-// contact form
-input, select, textarea {
-    border: 1px solid #c5c5c5;
-}
-
-.gform_wrapper ul.gform_fields li.gfield {
-    padding-right: 16px;
-    padding-top: 30px;
-}
-
-.gform_confirmation_wrapper {
-	padding: 20px;
-    background: #f0f0f0;
-}
-
-// reg form radio button other
-#input_21_6_other {
-	    display: inline;
-}
-
-// Ultimate FAQ
-.ufaq-faq-div {
-	// background:#f9f9f9;
-	background:#eeeeee;
-	padding: 10px;
-	border:0px solid #ececec;
-	margin-top:10px;
-	margin-bottom:10px;
-}
-
-#day1 .ufaq-faq-div {
-	border-left:6px solid #b000ab;
-}
-
-#day2 .ufaq-faq-div {
-	border-left:6px solid #7c61e7;
-}
-
-.ewd-ufaq-post-margin-symbol span {
-	padding-top: 5px;
-	color:888888;
-}
-
-#day1 .ewd-ufaq-post-margin-symbol span {
-	color:#b000ab;
-}
-
-#day2 .ewd-ufaq-post-margin-symbol span {
-	color:#7c61e7;
-}
-
-.ewd-ufaq-post-margin {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.ufaq-faq-categories {
-    margin-top: 20px;
-    border-top: 2px solid #dddddd;
-    padding-top: 10px;
-}
-
-.ufaq-back-to-top {
-    padding-top: 20px;
+    background-color: var(--color1);
 } */
 
-html,
 body {
-    background-color: var(--gray);
-}
-
-body {
-    color: var(--green);
+    // color: var(--color2);
     font-family: $font-family;
 }
 
@@ -216,35 +36,35 @@ a {
     letter-spacing: normal;
 }
 
-.header-top-bar {
-    background-color: var(--brown);
-}
+/* .header-top-bar {
+    background-color: var(--color3);
+} */
 
-.top-bar-field,
+/* .top-bar-field,
 .top-bar-field i.fa,
 .top-bar-social-icons a i.fa {
-    color: var(--green);
-}
+    color: var(--color2);
+} */
 
 .navigation-bar {
     @include transition;
 
-    &.fixto-fixed {
+    /* &.fixto-fixed {
         @include background-color-rgba(
-            var(--gray--rgb), 0.9
+            var(--color1--rgb), 0.9
         );
-    }
+    } */
 }
 
 a.text-logo {
-    @include text-shadow-rgba(
+    /* @include text-shadow-rgba(
         1px,
         1px,
         3px,
-        var(--green-dark--rgb), 0.8
-    );
+        var(--color2-dark--rgb), 0.8
+    ); */
 
-    color: var(--gray);
+    // color: var(--color1);
     font-size: 1.8rem;
     line-height: 1;
 
@@ -253,32 +73,32 @@ a.text-logo {
         @extend .text-logo;
     }
 
-    &:hover {
-        color: var(--brown-light);
-    }
+    /* &:hover {
+        color: var(--color3-light);
+    } */
 
     .fixto-fixed & {
-        color: var(--green);
+        // color: var(--color2);
 
-        &:not(:hover) {
+        /* &:not(:hover) {
             text-shadow: none;
-        }
+        } */
         
         &:visited,
         &:hover {
             @extend .text-logo;
         }
         
-        &:hover {
+        /* &:hover {
             @include text-shadow-rgba(
                 0px,
                 0px,
                 3px,
-                var(--green-dark--rgb), 0.8
+                var(--color2-dark--rgb), 0.8
             );
 
-            color: var(--brown-light);
-        }
+            color: var(--color3-light);
+        } */
     }
 }
 
@@ -289,7 +109,7 @@ ul.dropdown-menu {
         padding: 0;
         
         > a {
-            color: var(--white);
+            // color: var(--white);
             letter-spacing: normal;
             line-height: 1;
             padding: $padding;
@@ -297,11 +117,11 @@ ul.dropdown-menu {
         }
             
         .sub-menu {
-            background-color: var(--gray);
+            // background-color: var(--color1);
 
-            li > a {
-                color: var(--green);
-            }
+            /* li > a {
+                color: var(--color2);
+            } */
         }
 
         &.contact,
@@ -342,68 +162,319 @@ ul.dropdown-menu {
     
     &.active-line-bottom > li:not(.current-menu-item):not(.current_page_item),
     &.default > li:not(.current-menu-item):not(.current_page_item) {
+        /* &:hover > a {
+            @include text-shadow-rgba(
+                0px,
+                0px,
+                3px,
+                var(--color2-dark--rgb), 0.8
+            );
+
+            color: var(--color3-light);
+
+            .fixto-fixed & {
+                color: var(--color3-light);
+            }
+        } */
+        
+        /* > a {
+            @include text-shadow-rgba(
+                1px,
+                1px,
+                3px,
+                var(--color2-dark--rgb), 0.8
+            );
+
+            .fixto-fixed & {
+                color: var(--color2);
+                
+                &:not(:hover) {
+                    text-shadow: none;
+                }
+            }
+        } */
+    }
+}
+
+/* .header-homepage:not(.header-slide) {
+    .background-overlay,
+    &.color-overlay::before {
+        opacity: 0.0 !important;
+    }
+
+    .background-overlay {
+        background-color: var(--color2-dark--rgb) !important;
+    }
+} */
+
+/* h1.hero-title,
+p.header-subtitle {
+    @include text-shadow-rgba(
+        1px,
+        1px,
+        3px,
+        var(--color2-dark--rgb), 0.8
+    );
+
+    color: var(--color1);
+} */
+
+/* .mesmerize-front-page .header-separator path.svg-white-bg {
+    fill: var(--color1) !important;
+}
+
+.site > {
+    .page-content,
+    .content {
+        background-color: var(--color1);
+    }
+} */
+
+.content-section-spacing {
+    // background-color: var(--color1);
+    
+    &#overlappable-1 {
+        // background-color: var(--color1) !important;
+
+        h5 {
+            // color: var(--color2);
+            font-size: 1.2rem;
+        }
+    }
+}
+
+/* i.fa.icon.reverse.color,
+i.fa.icon.reverse.color1,
+.button.color-white.outline,
+.button.color1 {
+    @include box-shadow-rgba(
+        0px,
+        0px,
+        3px,
+        0px,
+        var(--color2-dark--rgb), 0.8
+    );
+
+    background-color: var(--color2);
+    border: none;
+    color: var(--white);
+
+    &:hover {
+        background-color: var(--color3-light);
+        color: var(--color2-dark);
+    }
+} */
+
+.logo_col {
+    padding: .85rem;
+}
+
+/* .read-more {
+    color: var(--color2);
+} */
+
+#news {
+    background-attachment: fixed;
+    background-image: url(http://tkf.local/wp-content/uploads/2018/03/UofT14224_20171103_UniversityofTorontoGateSign_001-scr.jpg);
+    padding: 0;
+    
+    > div {
+        /* @include background-color-rgba(
+            var(--color2--rgb), 0.8
+        ); */
+
+        padding: $padding*2;
+    }
+
+    /* h2,
+    .lead {
+        color: var(--color1);
+    } */
+}
+
+.footer {
+    // background-color: var(--color1);
+    display: none;
+}
+
+// Colours -------------------------------------------------------------------------------------------
+html,
+body {
+    background-color: var(--color1);
+}
+
+body {
+    color: var(--color2);
+}
+
+.header-top-bar {
+    background-color: var(--color3);
+}
+
+.top-bar-field,
+.top-bar-field i.fa,
+.top-bar-social-icons a i.fa {
+    color: var(--color2);
+}
+
+.navigation-bar {
+    @include background-color-rgba(
+        var(--color2-dark--rgb), 0.4
+    );
+    
+    &.fixto-fixed {
+        @include background-color-rgba(
+            var(--color1--rgb), 0.8
+        );
+    }
+}
+
+a.text-logo {
+    @include text-shadow-rgba(
+        0px,
+        0px,
+        3px,
+        var(--black--rgb), 0.8
+    );
+
+    color: var(--color1);
+
+    &:hover {
+        color: var(--color3-light);
+    }
+
+    .fixto-fixed & {
+        color: var(--color2);
+
+        &:not(:hover) {
+            @include text-shadow-rgba(
+                0px,
+                0px,
+                3px,
+                var(--white--rgb), 0.8
+            );
+        }
+
+        &:hover {
+            @include text-shadow-rgba(
+                0px,
+                0px,
+                3px,
+                var(--color2-dark--rgb), 0.8
+            );
+
+            color: var(--color3-light);
+        }
+    }
+}
+
+ul.dropdown-menu {
+    align-items: center;
+
+    li {
+        padding: 0;
+            
+        .sub-menu {
+            background-color: var(--color1);
+
+            li > a {
+                color: var(--color2);
+            }
+        }
+    }
+
+    &.active-line-bottom > li:not(.current-menu-item):not(.current_page_item),
+    &.default > li:not(.current-menu-item):not(.current_page_item) {
         &:hover > a {
             @include text-shadow-rgba(
                 0px,
                 0px,
                 3px,
-                var(--green-dark--rgb), 0.8
+                var(--color2-dark--rgb), 0.8
             );
-            
-            color: var(--brown-light);
+
+            color: var(--color2-light);
 
             .fixto-fixed & {
-                color: var(--brown-light);
+                color: var(--color3-light);
             }
         }
-        
+
         > a {
             @include text-shadow-rgba(
-                1px,
-                1px,
-                3px,
-                var(--green-dark--rgb), 0.8
+                0px,
+                0px,
+                2px,
+                var(--black--rgb), 0.8
             );
 
+            color: var(--color1);
+
             .fixto-fixed & {
-                color: var(--green);
-                
+                color: var(--color2);
+
                 &:not(:hover) {
-                    text-shadow: none;
+                    @include text-shadow-rgba(
+                        0px,
+                        0px,
+                        2px,
+                        var(--white--rgb), 0.8
+                    );
                 }
             }
         }
     }
 }
 
+.header-homepage:not(.header-slide) {
+    .background-overlay,
+    &.color-overlay::before {
+        opacity: 0.2 !important;
+    }
+
+    &.color-overlay::before {
+        background-color: var(--color2-dark) !important;
+    }
+}
+
 h1.hero-title,
-p.header-subtitle {
+p.header-subtitle > span > *{
+    @include background-color-rgba(
+        var(--color2--rgb), .75
+    );
     @include text-shadow-rgba(
-        1px,
-        1px,
+        0px,
+        0px,
         3px,
-        var(--green-dark--rgb), 0.8
+        var(--color2-dark--rgb), 0.8
     );
 
-    color: var(--gray);
+    border-radius: 56px;
+    color: var(--color1);
+    display: inline-block;
+    padding: $padding;
+}
+
+.mesmerize-front-page .header-separator path.svg-white-bg {
+    fill: var(--color1) !important;
+    opacity: 0.3;
 }
 
 .site > {
     .page-content,
     .content {
-        background-color: var(--gray);
+        background-color: var(--color1);
     }
 }
 
 .content-section-spacing {
-    background-color: var(--gray);
+    background-color: var(--color1);
     
     &#overlappable-1 {
-        background-color: var(--gray) !important;
+        background-color: var(--color1) !important;
 
         h5 {
-            color: var(--green);
-            font-size: 1.2rem;
+            color: var(--color2);
         }
     }
 }
@@ -417,47 +488,36 @@ i.fa.icon.reverse.color1,
         0px,
         3px,
         0px,
-        var(--green-dark--rgb), 0.8
+        var(--color2-dark--rgb), 0.8
     );
 
-    background-color: var(--green);
+    background-color: var(--color2);
     border: none;
-    color: var(--white);
+    color: var(--color1);
 
     &:hover {
-        background-color: var(--brown-light);
-        color: var(--green-dark);
+        background-color: var(--color3-light);
+        color: var(--color2-dark);
     }
 }
 
-.logo_col {
-    padding: .85rem;
-}
-
 .read-more {
-    color: var(--green);
+    color: var(--color2);
 }
 
 #news {
-    background-attachment: fixed;
-    background-image: url(http://tkf.local/wp-content/uploads/2018/03/UofT14224_20171103_UniversityofTorontoGateSign_001-scr.jpg);
-    padding: 0;
-    
     > div {
         @include background-color-rgba(
-            var(--green--rgb), 0.8
+            var(--color2--rgb), 0.8
         );
-
-        padding: $padding*2;
     }
 
     h2,
     .lead {
-        color: var(--gray);
+        color: var(--color1);
     }
 }
 
 .footer {
-    background-color: var(--gray);
-    display: none;
+    background-color: var(--color1);
 }

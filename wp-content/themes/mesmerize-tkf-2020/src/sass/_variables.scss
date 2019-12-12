@@ -1,11 +1,27 @@
 // Colours
 $black: #000000 !default;
-$gray: #f1f1f1 !default;
-$green: #29520e !default;
-$green-dark: #1F3D0C !default;
-$brown: #ffb600 !default;
-$brown-light: #f9e109 !default;
 $white: #ffffff !default;
+
+// Theme 1 Default
+$color1-theme1: #f1f1f1 !default;
+$color2-theme1: #29520e !default;
+$color2-dark-theme1: #1F3D0C !default;
+$color3-theme1: #ff9800 !default;
+$color3-light-theme1: #f9e109 !default;
+
+// Theme 2
+$color1-theme2: #e4da5f !default;
+$color2-theme2: #1b891f !default;
+$color2-dark-theme2: #003c0d !default;
+$color3-theme2: #ff8100 !default;
+$color3-light-theme2: #f1f1f1 !default;
+
+// Theme 3
+$color1-theme3: #e4da5f !default;
+$color2-theme3: #003c0d !default;
+$color2-dark-theme3: #1b891f !default;
+$color3-theme3: #e4da5f !default;
+$color3-light-theme3: #e4da5f !default;
 
 // Spacing
 $section-width: 960px;
@@ -18,19 +34,54 @@ $padding: 1rem !default;
     @return red( $hex ), green( $hex ), blue( $hex );
 }
 :root {
+    // Colors
     --black: #{ $black };
     --black--rgb: #{ hex-to-rgb( $black ) };
-    --gray: #{ $gray };
-    --gray--rgb: #{ hex-to-rgb( $gray ) };
-    --green: #{ $green };
-    --green--rgb: #{ hex-to-rgb( $green ) };
-    --green-dark: #{ $green-dark };
-    --green-dark--rgb: #{ hex-to-rgb( $green-dark ) };
-    --brown: #{ $brown };
-    --brown-light: #{ $brown-light };
-    --brown--rgb: #{ hex-to-rgb( $brown ) };
     --white: #{ $white };
     --white--rgb: #{ hex-to-rgb( $white ) };
+
+    @mixin theme( $name: theme1 ) {
+        @if $name == 'theme2' { // Theme 2
+            --color1: #{ $color1-theme2 };
+            --color1--rgb: #{ hex-to-rgb( $color1-theme2 ) };
+            --color2: #{ $color2-theme2 };
+            --color2--rgb: #{ hex-to-rgb( $color2-theme2 ) };
+            --color2-dark: #{ $color2-dark-theme2 };
+            --color2-dark--rgb: #{ hex-to-rgb( $color2-dark-theme2 ) };
+            --color3: #{ $color3-theme2 };
+            --color3--rgb: #{ hex-to-rgb( $color3-theme2 ) };
+            --color3-light: #{ $color3-light-theme2 };
+            --color3-light--rgb: #{ hex-to-rgb( $color3-light-theme2 ) };
+            --color3--rgb: #{ hex-to-rgb( $color3-theme2 ) };
+        } @else if $name == 'theme3' { // Theme 3
+            --color1: #{ $color1-theme3 };
+            --color1--rgb: #{ hex-to-rgb( $color1-theme3 ) };
+            --color2: #{ $color2-theme3 };
+            --color2--rgb: #{ hex-to-rgb( $color2-theme3 ) };
+            --color2-dark: #{ $color2-dark-theme3 };
+            --color2-dark--rgb: #{ hex-to-rgb( $color2-dark-theme3 ) };
+            --color3: #{ $color3-theme3 };
+            --color3-light: #{ $color3-light-theme3 };
+            --color3-light--rgb: #{ hex-to-rgb( $color3-light-theme3 ) };
+            --color3--rgb: #{ hex-to-rgb( $color3-theme3 ) };
+        } @else { // Theme 1 Default
+            --gray: #{ $color1-theme1 };
+            --gray--rgb: #{ hex-to-rgb( $color1-theme1 ) };
+            --green: #{ $color2-theme1 };
+            --green--rgb: #{ hex-to-rgb( $color2-theme1 ) };
+            --green-dark: #{ $color2-dark-theme1 };
+            --green-dark--rgb: #{ hex-to-rgb( $color2-dark-theme1 ) };
+            --brown: #{ $color3-theme1 };
+            --brown-light: #{ $color3-light-theme1 };
+            --brown-light--rgb: #{ hex-to-rgb( $color3-light-theme1 ) };
+            --brown--rgb: #{ hex-to-rgb( $color3-theme1 ) };
+        }
+    }
+    @include theme(
+        theme2
+    );
+
+    // Spacing
     --margin: #{ $margin };
     --padding: #{ $padding };
 }
