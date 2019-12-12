@@ -17,11 +17,11 @@ $color3-theme2: #ff8100 !default;
 $color3-light-theme2: #f1f1f1 !default;
 
 // Theme 3
-$color1-theme3: #e4da5f !default;
-$color2-theme3: #003c0d !default;
-$color2-dark-theme3: #1b891f !default;
-$color3-theme3: #e4da5f !default;
-$color3-light-theme3: #e4da5f !default;
+$color1-theme3: #3583d6 !default;
+$color2-theme3: #fcd93a !default;
+$color2-dark-theme3: #a0d973 !default;
+$color3-theme3: #ff6683 !default;
+$color3-light-theme3: #ec79d3 !default;
 
 // Spacing
 $section-width: 960px;
@@ -78,7 +78,7 @@ $padding: 1rem !default;
         }
     }
     @include theme(
-        theme2
+        theme3
     );
 
     // Spacing

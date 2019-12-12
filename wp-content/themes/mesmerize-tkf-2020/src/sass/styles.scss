@@ -319,40 +319,70 @@ body {
 
 .navigation-bar {
     @include background-color-rgba(
-        var(--color2-dark--rgb), 0.4
+        var(--color3-light--rgb), 0.1
     );
     
     &.fixto-fixed {
         @include background-color-rgba(
-            var(--color1--rgb), 0.8
+            var(--color2-dark--rgb), 0.2
         );
     }
 }
 
 a.text-logo {
+    @include background-color-rgba(
+        var(--white--rgb), .5
+    );
+    @include box-shadow-rgba(
+        0px,
+        0px,
+        3px,
+        0px,
+        var(--color3--rgb), 0.8
+    );
     @include text-shadow-rgba(
         0px,
         0px,
         3px,
-        var(--black--rgb), 0.8
+        var(--white--rgb), 0.8
     );
 
-    color: var(--color1);
+    border-radius: 10px;
+    color: var(--black);
+    padding: $padding/2;
 
     &:hover {
-        color: var(--color3-light);
+        @include box-shadow-rgba(
+            0px,
+            0px,
+            3px,
+            0px,
+            var(--black--rgb), 0.8
+        );
+        @include text-shadow-rgba(
+            0px,
+            0px,
+            3px,
+            var(--black--rgb), 0.8
+        );
+
+        background-color: var(--color1);
+        color: var(--white);
     }
 
     .fixto-fixed & {
-        color: var(--color2);
-
         &:not(:hover) {
+            @include background-color-rgba(
+                var(--color3-light--rgb), 0.1
+            );
             @include text-shadow-rgba(
                 0px,
                 0px,
                 3px,
-                var(--white--rgb), 0.8
+                var(--black--rgb), 0.8
             );
+
+            color: var(--white);
         }
 
         &:hover {
@@ -363,7 +393,7 @@ a.text-logo {
                 var(--color2-dark--rgb), 0.8
             );
 
-            color: var(--color3-light);
+            color: var(--white);
         }
     }
 }
@@ -386,41 +416,80 @@ ul.dropdown-menu {
     &.active-line-bottom > li:not(.current-menu-item):not(.current_page_item),
     &.default > li:not(.current-menu-item):not(.current_page_item) {
         &:hover > a {
+            @include box-shadow-rgba(
+                0px,
+                0px,
+                3px,
+                0px,
+                var(--black--rgb), 0.8
+            );
             @include text-shadow-rgba(
                 0px,
                 0px,
                 3px,
-                var(--color2-dark--rgb), 0.8
+                var(--black--rgb), 0.8
             );
-
-            color: var(--color2-light);
+    
+            background-color: var(--color1);
+            color: var(--white);
 
             .fixto-fixed & {
-                color: var(--color3-light);
+                @include box-shadow-rgba(
+                    0px,
+                    0px,
+                    3px,
+                    0px,
+                    var(--black--rgb), 0.8
+                );
+                @include text-shadow-rgba(
+                    0px,
+                    0px,
+                    3px,
+                    var(--black--rgb), 0.8
+                );
+        
+                background-color: var(--color1);
+                color: var(--white);
             }
         }
 
         > a {
+            @include background-color-rgba(
+                var(--white--rgb), .5
+            );
+            @include box-shadow-rgba(
+                0px,
+                0px,
+                3px,
+                0px,
+                var(--color3--rgb), 0.8
+            );
             @include text-shadow-rgba(
                 0px,
                 0px,
-                2px,
-                var(--black--rgb), 0.8
+                3px,
+                var(--white--rgb), 0.8
             );
-
-            color: var(--color1);
+        
+            border-radius: 10px;
+            color: var(--black);
+            margin-left: $margin/2;
+            padding: $padding/2;
 
             .fixto-fixed & {
-                color: var(--color2);
-
-                &:not(:hover) {
+                // &:not(:hover) {
+                    @include background-color-rgba(
+                        var(--color3-light--rgb), 0.1
+                    );
                     @include text-shadow-rgba(
                         0px,
                         0px,
-                        2px,
-                        var(--white--rgb), 0.8
+                        3px,
+                        var(--black--rgb), 0.8
                     );
-                }
+        
+                    color: var(--white);
+                // }
             }
         }
     }
@@ -433,31 +502,41 @@ ul.dropdown-menu {
     }
 
     &.color-overlay::before {
-        background-color: var(--color2-dark) !important;
+        background-color: var(--color3) !important;
     }
 }
 
-h1.hero-title,
-p.header-subtitle > span > *{
+.header-content .align-holder {
     @include background-color-rgba(
-        var(--color2--rgb), .75
+        var(--white--rgb), .5
     );
+    @include box-shadow-rgba(
+        0px,
+        0px,
+        3px,
+        0px,
+        var(--color3--rgb), 0.8
+    );
+
+    border-radius: 10px;
+    padding: $padding*2;
+}
+
+h1.hero-title,
+p.header-subtitle > span > * {
     @include text-shadow-rgba(
         0px,
         0px,
         3px,
-        var(--color2-dark--rgb), 0.8
+        var(--white--rgb), 0.8
     );
 
-    border-radius: 56px;
-    color: var(--color1);
-    display: inline-block;
-    padding: $padding;
+    color: var(--black);
 }
 
 .mesmerize-front-page .header-separator path.svg-white-bg {
-    fill: var(--color1) !important;
-    opacity: 0.3;
+    fill: var(--color2-dark) !important;
+    opacity: 0.1;
 }
 
 .site > {
@@ -483,22 +562,48 @@ i.fa.icon.reverse.color,
 i.fa.icon.reverse.color1,
 .button.color-white.outline,
 .button.color1 {
+    @include background-color-rgba(
+        var(--white--rgb), .5
+    );
     @include box-shadow-rgba(
         0px,
         0px,
         3px,
         0px,
-        var(--color2-dark--rgb), 0.8
+        var(--color3--rgb), 0.8
+    );
+    @include text-shadow-rgba(
+        0px,
+        0px,
+        3px,
+        var(--white--rgb), 0.8
     );
 
-    background-color: var(--color2);
     border: none;
-    color: var(--color1);
+    color: var(--black);
 
     &:hover {
-        background-color: var(--color3-light);
-        color: var(--color2-dark);
+        @include box-shadow-rgba(
+            0px,
+            0px,
+            3px,
+            0px,
+            var(--black--rgb), 0.8
+        );
+        @include text-shadow-rgba(
+            0px,
+            0px,
+            3px,
+            var(--black--rgb), 0.8
+        );
+
+        background-color: var(--color1);
+        color: var(--white);
     }
+}
+
+.button.color1 {
+    margin-bottom: 0;
 }
 
 .read-more {
