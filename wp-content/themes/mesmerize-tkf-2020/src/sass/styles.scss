@@ -198,7 +198,8 @@ h2,
 h3,
 h4,
 h5,
-.comment-author .fn, h6 {
+.comment-author .fn,
+h6 {
     font-family: $font-family;
     letter-spacing: normal;
 }
@@ -258,7 +259,10 @@ a.text-logo {
 
     .fixto-fixed & {
         color: var(--green);
-        text-shadow: none;
+
+        &:not(:hover) {
+            text-shadow: none;
+        }
         
         &:visited,
         &:hover {
@@ -266,6 +270,13 @@ a.text-logo {
         }
         
         &:hover {
+            @include text-shadow-rgba(
+                0px,
+                0px,
+                3px,
+                var(--green-dark--rgb), 0.8
+            );
+
             color: var(--brown-light);
         }
     }
@@ -275,24 +286,20 @@ ul.dropdown-menu {
     align-items: center;
 
     li {
-        a {
-            @include text-shadow-rgba(
-                1px,
-                1px,
-                3px,
-                var(--green-dark--rgb), 0.8
-            );
-
+        padding: 0;
+        
+        > a {
             color: var(--white);
             letter-spacing: normal;
             line-height: 1;
+            padding: $padding;
             text-transform: initial;
         }
             
         .sub-menu {
             background-color: var(--gray);
 
-            li a {
+            li > a {
                 color: var(--green);
             }
         }
@@ -336,25 +343,35 @@ ul.dropdown-menu {
     &.active-line-bottom > li:not(.current-menu-item):not(.current_page_item),
     &.default > li:not(.current-menu-item):not(.current_page_item) {
         &:hover > a {
+            @include text-shadow-rgba(
+                0px,
+                0px,
+                3px,
+                var(--green-dark--rgb), 0.8
+            );
+            
             color: var(--brown-light);
-        }
-        
-        > a {
-            .fixto-fixed & {
-                color: var(--green);
-            }
-        }
-        
-        &:hover > a {
+
             .fixto-fixed & {
                 color: var(--brown-light);
             }
         }
-    }
-    
-    li a {
-        .fixto-fixed & {
-            text-shadow: none;
+        
+        > a {
+            @include text-shadow-rgba(
+                1px,
+                1px,
+                3px,
+                var(--green-dark--rgb), 0.8
+            );
+
+            .fixto-fixed & {
+                color: var(--green);
+                
+                &:not(:hover) {
+                    text-shadow: none;
+                }
+            }
         }
     }
 }
