@@ -49,6 +49,12 @@ a {
 .navigation-bar {
     @include transition;
 
+    padding: $padding/2 $padding;
+
+    .row {
+        align-items: flex-start;
+    }
+
     /* &.fixto-fixed {
         @include background-color-rgba(
             var(--color1--rgb), 0.9
@@ -103,13 +109,15 @@ a.text-logo {
 }
 
 ul.dropdown-menu {
-    align-items: center;
+    align-items: flex-end;
+    justify-content: flex-end;
 
     li {
         padding: 0;
         
         > a {
             // color: var(--white);
+            font-size: initial;
             letter-spacing: normal;
             line-height: 1;
             padding: $padding;
@@ -219,6 +227,10 @@ p.header-subtitle {
     color: var(--color1);
 } */
 
+h1.hero-title {
+
+}
+
 /* .mesmerize-front-page .header-separator path.svg-white-bg {
     fill: var(--color1) !important;
 }
@@ -264,10 +276,6 @@ i.fa.icon.reverse.color1,
         color: var(--color2-dark);
     }
 } */
-
-.logo_col {
-    padding: .85rem;
-}
 
 /* .read-more {
     color: var(--color2);
@@ -324,14 +332,14 @@ body {
     
     &.fixto-fixed {
         @include background-color-rgba(
-            var(--color2-dark--rgb), 0.2
+            var(--color1--rgb), .95
         );
     }
 }
 
 a.text-logo {
     @include background-color-rgba(
-        var(--white--rgb), .5
+        var(--color1--rgb), .75
     );
     @include box-shadow-rgba(
         0px,
@@ -344,12 +352,12 @@ a.text-logo {
         0px,
         0px,
         3px,
-        var(--white--rgb), 0.8
+        var(--color1--rgb), 0.8
     );
 
-    border-radius: 10px;
-    color: var(--black);
-    padding: $padding/2;
+    border-radius: 5px;
+    color: var(--color2-dark);
+    padding: $padding/2 $padding*2;
 
     &:hover {
         @include box-shadow-rgba(
@@ -367,22 +375,22 @@ a.text-logo {
         );
 
         background-color: var(--color1);
-        color: var(--white);
+        color: var(--color1);
     }
 
     .fixto-fixed & {
         &:not(:hover) {
-            @include background-color-rgba(
-                var(--color3-light--rgb), 0.1
-            );
-            @include text-shadow-rgba(
+            @include box-shadow-rgba(
                 0px,
                 0px,
                 3px,
-                var(--black--rgb), 0.8
+                0px,
+                var(--color2--rgb), 0.75
             );
 
-            color: var(--white);
+            background-color: transparent;
+            color: var(--color2);
+            text-shadow: none;
         }
 
         &:hover {
@@ -393,17 +401,15 @@ a.text-logo {
                 var(--color2-dark--rgb), 0.8
             );
 
-            color: var(--white);
+            color: var(--color1);
         }
     }
 }
 
 ul.dropdown-menu {
-    align-items: center;
-
     li {
         padding: 0;
-            
+
         .sub-menu {
             background-color: var(--color1);
 
@@ -431,7 +437,7 @@ ul.dropdown-menu {
             );
     
             background-color: var(--color1);
-            color: var(--white);
+            color: var(--color1);
 
             .fixto-fixed & {
                 @include box-shadow-rgba(
@@ -449,47 +455,45 @@ ul.dropdown-menu {
                 );
         
                 background-color: var(--color1);
-                color: var(--white);
+                color: var(--color1);
             }
         }
 
         > a {
             @include background-color-rgba(
-                var(--white--rgb), .5
+                var(--color1--rgb), .75
             );
             @include box-shadow-rgba(
                 0px,
                 0px,
                 3px,
                 0px,
-                var(--color3--rgb), 0.8
+                var(--color3--rgb), 0.75
             );
             @include text-shadow-rgba(
                 0px,
                 0px,
-                3px,
-                var(--white--rgb), 0.8
+                0px,
+                var(--color1--rgb), 0.8
             );
         
-            border-radius: 10px;
-            color: var(--black);
-            margin-left: $margin/2;
-            padding: $padding/2;
+            border-radius: 5px;
+            color: var(--color2-dark);
+            margin: $margin/4 $margin/2;
+            padding: $padding/2 $padding*2;
 
             .fixto-fixed & {
-                // &:not(:hover) {
-                    @include background-color-rgba(
-                        var(--color3-light--rgb), 0.1
-                    );
-                    @include text-shadow-rgba(
-                        0px,
-                        0px,
-                        3px,
-                        var(--black--rgb), 0.8
-                    );
-        
-                    color: var(--white);
-                // }
+                @include box-shadow-rgba(
+                    0px,
+                    0px,
+                    3px,
+                    0px,
+                    var(--color2--rgb), 0.75
+                );
+                
+                background-color: transparent;
+                color: var(--color2);
+                text-shadow: none;
             }
         }
     }
@@ -498,17 +502,17 @@ ul.dropdown-menu {
 .header-homepage:not(.header-slide) {
     .background-overlay,
     &.color-overlay::before {
-        opacity: 0.2 !important;
+        opacity: 0.35 !important;
     }
 
     &.color-overlay::before {
-        background-color: var(--color3) !important;
+        background-color: var(--color2) !important;
     }
 }
 
 .header-content .align-holder {
     @include background-color-rgba(
-        var(--white--rgb), .5
+        var(--color1--rgb), .75
     );
     @include box-shadow-rgba(
         0px,
@@ -518,20 +522,56 @@ ul.dropdown-menu {
         var(--color3--rgb), 0.8
     );
 
-    border-radius: 10px;
+    border-radius: 5px;
     padding: $padding*2;
 }
 
-h1.hero-title,
-p.header-subtitle > span > * {
+h1.hero-title > *,
+p.header-subtitle > span b {
     @include text-shadow-rgba(
         0px,
         0px,
         3px,
-        var(--white--rgb), 0.8
+        var(--color3-light--rgb), 0.3
     );
 
-    color: var(--black);
+    border-radius: 5px;
+    color: var(--color2-dark);
+    display: inline-block;
+}
+
+h1.hero-title,
+p.header-subtitle {
+    br {
+        display: none;
+    }
+}
+
+h1.hero-title {
+    line-height: 1;
+    margin-bottom: $margin;
+    
+    > span {
+        font-weight: 100;
+        margin-bottom: $margin/2;
+    }
+
+    b {
+        font-size: 1.5rem;
+        font-weight: 100;
+    }
+}
+
+p.header-subtitle {
+    > span > span {
+        display: block;
+        margin: $margin/2;
+    }
+
+    > span > b {
+        display: inline-block;
+        margin: $margin/2;
+    }
 }
 
 .mesmerize-front-page .header-separator path.svg-white-bg {
@@ -550,20 +590,68 @@ p.header-subtitle > span > * {
     background-color: var(--color1);
     
     &#overlappable-1 {
+        background: url(http://tkf.local/wp-content/uploads/2018/03/UofT185_20060611_AlumniGates_003-scr.jpg) no-repeat center center;
+        background-attachment: fixed;
         background-color: var(--color1) !important;
+        background-size: cover;
+        position: relative;
+
+        &::before {
+            @include background-color-rgba(
+                var(--color2-dark--rgb), .8
+            )
+            content: "";
+            display: inline-block;
+            left: 0;
+            position: absolute;
+            height: 100%;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .gridContainer {
+            position: relative;
+            z-index: 2;
+
+            .spaced-cols [data-type="column"] {
+                @include background-color-rgba(
+                    var(--color2--rgb), .75
+                );
+                @include box-shadow-rgba(
+                    0px,
+                    0px,
+                    3px,
+                    0px,
+                    var(--color1--rgb), 0.75
+                );
+                @include text-shadow-rgba(
+                    0px,
+                    0px,
+                    3px,
+                    var(--color2-dark--rgb), 0.8
+                );
+            
+                border-radius: 5px;
+                color: var(--color1);
+                display: inline-block;
+                padding: $padding;
+
+            }
+        }
 
         h5 {
-            color: var(--color2);
+            color: var(--color1);
         }
     }
 }
 
 i.fa.icon.reverse.color,
 i.fa.icon.reverse.color1,
-.button.color-white.outline,
+.button.white.outline,
 .button.color1 {
     @include background-color-rgba(
-        var(--white--rgb), .5
+        var(--color1--rgb), .5
     );
     @include box-shadow-rgba(
         0px,
@@ -576,11 +664,12 @@ i.fa.icon.reverse.color1,
         0px,
         0px,
         3px,
-        var(--white--rgb), 0.8
+        var(--color1--rgb), 0.8
     );
 
+    background-color: var(--color1);
     border: none;
-    color: var(--black);
+    color: var(--color2-dark);
 
     &:hover {
         @include box-shadow-rgba(
@@ -598,11 +687,12 @@ i.fa.icon.reverse.color1,
         );
 
         background-color: var(--color1);
-        color: var(--white);
+        color: var(--color1);
     }
 }
 
-.button.color1 {
+.button.color1,
+.button.white.outline {
     margin-bottom: 0;
 }
 
