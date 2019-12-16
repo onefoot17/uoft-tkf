@@ -2,13 +2,13 @@
 @import '_variables';
 @import '_mixins';
 
-/* html,
+html,
 body {
     background-color: var(--color1);
-} */
+}
 
 body {
-    // color: var(--color2);
+    color: var(--color2);
     font-family: $font-family;
 }
 
@@ -36,15 +36,15 @@ a {
     letter-spacing: normal;
 }
 
-/* .header-top-bar {
+.header-top-bar {
     background-color: var(--color3);
-} */
+}
 
-/* .top-bar-field,
+.top-bar-field,
 .top-bar-field i.fa,
 .top-bar-social-icons a i.fa {
     color: var(--color2);
-} */
+}
 
 .navigation-bar {
     @include transition;
@@ -55,47 +55,84 @@ a {
         align-items: flex-start;
     }
 
-    /* &.fixto-fixed {
+    &.fixto-fixed {
         @include background-color-rgba(
             var(--color1--rgb), 0.9
         );
-    } */
+    }
 }
 
 a.text-logo {
-    /* @include text-shadow-rgba(
-        1px,
-        1px,
+    @include background-color-rgba(
+        var(--color1--rgb), .75
+    );
+    @include box-shadow-rgba(
+        0px,
+        0px,
         3px,
-        var(--color2-dark--rgb), 0.8
-    ); */
+        0px,
+        var(--color3--rgb), 0.8
+    );
+    @include text-shadow-rgba(
+        0px,
+        0px,
+        3px,
+        var(--color1--rgb), 0.8
+    );
 
-    // color: var(--color1);
+    border-radius: 5px;
+    color: var(--color2-dark);
     font-size: 1.8rem;
     line-height: 1;
+    padding: $padding/2 $padding*2;
 
     &:visited,
     &:hover {
         @extend .text-logo;
     }
 
-    /* &:hover {
-        color: var(--color3-light);
-    } */
+    &:hover {
+        @include box-shadow-rgba(
+            0px,
+            0px,
+            3px,
+            0px,
+            var(--black--rgb), 0.8
+        );
+        @include text-shadow-rgba(
+            0px,
+            0px,
+            3px,
+            var(--black--rgb), 0.8
+        );
+
+        background-color: var(--color1);
+        color: var(--color1);
+    }
 
     .fixto-fixed & {
-        // color: var(--color2);
+        color: var(--color2);
 
-        /* &:not(:hover) {
+        &:not(:hover) {
+            @include box-shadow-rgba(
+                0px,
+                0px,
+                3px,
+                0px,
+                var(--color2--rgb), 0.75
+            );
+
+            background-color: transparent;
+            color: var(--color2);
             text-shadow: none;
-        } */
+        }
         
         &:visited,
         &:hover {
             @extend .text-logo;
         }
         
-        /* &:hover {
+        &:hover {
             @include text-shadow-rgba(
                 0px,
                 0px,
@@ -103,8 +140,8 @@ a.text-logo {
                 var(--color2-dark--rgb), 0.8
             );
 
-            color: var(--color3-light);
-        } */
+            color: var(--color1);
+        }
     }
 }
 
@@ -116,7 +153,6 @@ ul.dropdown-menu {
         padding: 0;
         
         > a {
-            // color: var(--white);
             font-size: initial;
             letter-spacing: normal;
             line-height: 1;
@@ -125,11 +161,11 @@ ul.dropdown-menu {
         }
             
         .sub-menu {
-            // background-color: var(--color1);
+            background-color: var(--color1);
 
-            /* li > a {
+            li > a {
                 color: var(--color2);
-            } */
+            }
         }
 
         &.contact,
@@ -170,257 +206,6 @@ ul.dropdown-menu {
     
     &.active-line-bottom > li:not(.current-menu-item):not(.current_page_item),
     &.default > li:not(.current-menu-item):not(.current_page_item) {
-        /* &:hover > a {
-            @include text-shadow-rgba(
-                0px,
-                0px,
-                3px,
-                var(--color2-dark--rgb), 0.8
-            );
-
-            color: var(--color3-light);
-
-            .fixto-fixed & {
-                color: var(--color3-light);
-            }
-        } */
-        
-        /* > a {
-            @include text-shadow-rgba(
-                1px,
-                1px,
-                3px,
-                var(--color2-dark--rgb), 0.8
-            );
-
-            .fixto-fixed & {
-                color: var(--color2);
-                
-                &:not(:hover) {
-                    text-shadow: none;
-                }
-            }
-        } */
-    }
-}
-
-/* .header-homepage:not(.header-slide) {
-    .background-overlay,
-    &.color-overlay::before {
-        opacity: 0.0 !important;
-    }
-
-    .background-overlay {
-        background-color: var(--color2-dark--rgb) !important;
-    }
-} */
-
-/* h1.hero-title,
-p.header-subtitle {
-    @include text-shadow-rgba(
-        1px,
-        1px,
-        3px,
-        var(--color2-dark--rgb), 0.8
-    );
-
-    color: var(--color1);
-} */
-
-h1.hero-title {
-
-}
-
-/* .mesmerize-front-page .header-separator path.svg-white-bg {
-    fill: var(--color1) !important;
-}
-
-.site > {
-    .page-content,
-    .content {
-        background-color: var(--color1);
-    }
-} */
-
-.content-section-spacing {
-    // background-color: var(--color1);
-    
-    &#overlappable-1 {
-        // background-color: var(--color1) !important;
-
-        h5 {
-            // color: var(--color2);
-            font-size: 1.2rem;
-        }
-    }
-}
-
-/* i.fa.icon.reverse.color,
-i.fa.icon.reverse.color1,
-.button.color-white.outline,
-.button.color1 {
-    @include box-shadow-rgba(
-        0px,
-        0px,
-        3px,
-        0px,
-        var(--color2-dark--rgb), 0.8
-    );
-
-    background-color: var(--color2);
-    border: none;
-    color: var(--white);
-
-    &:hover {
-        background-color: var(--color3-light);
-        color: var(--color2-dark);
-    }
-} */
-
-/* .read-more {
-    color: var(--color2);
-} */
-
-#news {
-    background-attachment: fixed;
-    background-image: url(http://tkf.local/wp-content/uploads/2018/03/UofT14224_20171103_UniversityofTorontoGateSign_001-scr.jpg);
-    padding: 0;
-    
-    > div {
-        /* @include background-color-rgba(
-            var(--color2--rgb), 0.8
-        ); */
-
-        padding: $padding*2;
-    }
-
-    /* h2,
-    .lead {
-        color: var(--color1);
-    } */
-}
-
-.footer {
-    // background-color: var(--color1);
-    display: none;
-}
-
-// Colours -------------------------------------------------------------------------------------------
-html,
-body {
-    background-color: var(--color1);
-}
-
-body {
-    color: var(--color2);
-}
-
-.header-top-bar {
-    background-color: var(--color3);
-}
-
-.top-bar-field,
-.top-bar-field i.fa,
-.top-bar-social-icons a i.fa {
-    color: var(--color2);
-}
-
-.navigation-bar {
-    @include background-color-rgba(
-        var(--color3-light--rgb), 0.1
-    );
-    
-    &.fixto-fixed {
-        @include background-color-rgba(
-            var(--color1--rgb), .95
-        );
-    }
-}
-
-a.text-logo {
-    @include background-color-rgba(
-        var(--color1--rgb), .75
-    );
-    @include box-shadow-rgba(
-        0px,
-        0px,
-        3px,
-        0px,
-        var(--color3--rgb), 0.8
-    );
-    @include text-shadow-rgba(
-        0px,
-        0px,
-        3px,
-        var(--color1--rgb), 0.8
-    );
-
-    border-radius: 5px;
-    color: var(--color2-dark);
-    padding: $padding/2 $padding*2;
-
-    &:hover {
-        @include box-shadow-rgba(
-            0px,
-            0px,
-            3px,
-            0px,
-            var(--black--rgb), 0.8
-        );
-        @include text-shadow-rgba(
-            0px,
-            0px,
-            3px,
-            var(--black--rgb), 0.8
-        );
-
-        background-color: var(--color1);
-        color: var(--color1);
-    }
-
-    .fixto-fixed & {
-        &:not(:hover) {
-            @include box-shadow-rgba(
-                0px,
-                0px,
-                3px,
-                0px,
-                var(--color2--rgb), 0.75
-            );
-
-            background-color: transparent;
-            color: var(--color2);
-            text-shadow: none;
-        }
-
-        &:hover {
-            @include text-shadow-rgba(
-                0px,
-                0px,
-                3px,
-                var(--color2-dark--rgb), 0.8
-            );
-
-            color: var(--color1);
-        }
-    }
-}
-
-ul.dropdown-menu {
-    li {
-        padding: 0;
-
-        .sub-menu {
-            background-color: var(--color1);
-
-            li > a {
-                color: var(--color2);
-            }
-        }
-    }
-
-    &.active-line-bottom > li:not(.current-menu-item):not(.current_page_item),
-    &.default > li:not(.current-menu-item):not(.current_page_item) {
         &:hover > a {
             @include box-shadow-rgba(
                 0px,
@@ -458,7 +243,7 @@ ul.dropdown-menu {
                 color: var(--color1);
             }
         }
-
+        
         > a {
             @include background-color-rgba(
                 var(--color1--rgb), .75
@@ -642,6 +427,7 @@ p.header-subtitle {
 
         h5 {
             color: var(--color1);
+            font-size: 1.2rem;
         }
     }
 }
@@ -701,10 +487,18 @@ i.fa.icon.reverse.color1,
 }
 
 #news {
+    background-attachment: fixed;
+    background-image: url(http://tkf.local/wp-content/uploads/2018/03/UofT14224_20171103_UniversityofTorontoGateSign_001-scr.jpg);
+    padding: 0;
+    
     > div {
-        @include background-color-rgba(
-            var(--color2--rgb), 0.8
-        );
+        > div {
+            @include background-color-rgba(
+                var(--color2--rgb), 0.8
+            );
+        }
+
+        padding: $padding*2;
     }
 
     h2,
@@ -715,4 +509,5 @@ i.fa.icon.reverse.color1,
 
 .footer {
     background-color: var(--color1);
+    display: none;
 }
