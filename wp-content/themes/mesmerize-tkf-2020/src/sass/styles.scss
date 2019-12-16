@@ -103,13 +103,15 @@ a.text-logo {
 }
 
 ul.dropdown-menu {
-    align-items: center;
+    align-items: flex-end;
+    justify-content: flex-end;
 
     li {
         padding: 0;
         
         > a {
             // color: var(--white);
+            font-size: initial;
             letter-spacing: normal;
             line-height: 1;
             padding: $padding;
@@ -219,6 +221,10 @@ p.header-subtitle {
     color: var(--color1);
 } */
 
+h1.hero-title {
+
+}
+
 /* .mesmerize-front-page .header-separator path.svg-white-bg {
     fill: var(--color1) !important;
 }
@@ -324,7 +330,7 @@ body {
     
     &.fixto-fixed {
         @include background-color-rgba(
-            var(--color1--rgb), 0.8
+            var(--color3-light--rgb), .95
         );
     }
 }
@@ -369,11 +375,7 @@ a.text-logo {
 }
 
 ul.dropdown-menu {
-    align-items: center;
-
-    li {
-        padding: 0;
-            
+    li {            
         .sub-menu {
             background-color: var(--color1);
 
@@ -437,8 +439,8 @@ ul.dropdown-menu {
     }
 }
 
-h1.hero-title,
-p.header-subtitle > span > *{
+h1.hero-title > *,
+p.header-subtitle > span b {
     @include background-color-rgba(
         var(--color2--rgb), .75
     );
@@ -449,15 +451,48 @@ p.header-subtitle > span > *{
         var(--color2-dark--rgb), 0.8
     );
 
-    border-radius: 56px;
+    border-radius: 5px;
     color: var(--color1);
     display: inline-block;
     padding: $padding;
 }
 
+h1.hero-title,
+p.header-subtitle {
+    br {
+        display: none;
+    }
+}
+
+h1.hero-title {
+    line-height: 1;
+    margin-bottom: $margin;
+    
+    > span {
+        margin-bottom: $margin/2;
+    }
+
+    b {
+        font-size: 1.5rem;
+        font-weight: 100;
+    }
+}
+
+p.header-subtitle {
+    > span > span {
+        display: block;
+        margin: $margin/2;
+    }
+
+    > span > b {
+        display: inline-block;
+        margin: $margin/2;
+    }
+}
+
 .mesmerize-front-page .header-separator path.svg-white-bg {
-    fill: var(--color1) !important;
-    opacity: 0.3;
+    fill: var(--color3-light) !important;
+    opacity: 1;
 }
 
 .site > {
@@ -468,20 +503,60 @@ p.header-subtitle > span > *{
 }
 
 .content-section-spacing {
-    background-color: var(--color1);
+    background-color: var(--color3-light);
     
     &#overlappable-1 {
-        background-color: var(--color1) !important;
+        background: url(http://tkf.local/wp-content/uploads/2018/03/UofT185_20060611_AlumniGates_003-scr.jpg) no-repeat center center;
+        background-attachment: fixed;
+        background-size: cover;
+        position: relative;
+
+        &::before {
+            @include background-color-rgba(
+                var(--color3-light--rgb), .0
+            )
+            content: "";
+            display: inline-block;
+            left: 0;
+            position: absolute;
+            height: 100%;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .gridContainer {
+            position: relative;
+            z-index: 2;
+
+            .spaced-cols [data-type="column"] {
+                @include background-color-rgba(
+                    var(--color2--rgb), .75
+                );
+                @include text-shadow-rgba(
+                    0px,
+                    0px,
+                    3px,
+                    var(--color2-dark--rgb), 0.8
+                );
+            
+                border-radius: 5px;
+                color: var(--color1);
+                display: inline-block;
+                padding: $padding;
+
+            }
+        }
 
         h5 {
-            color: var(--color2);
+            color: var(--color1);
         }
     }
 }
 
 i.fa.icon.reverse.color,
 i.fa.icon.reverse.color1,
-.button.color-white.outline,
+.button.white.outline,
 .button.color1 {
     @include box-shadow-rgba(
         0px,
@@ -491,9 +566,9 @@ i.fa.icon.reverse.color1,
         var(--color2-dark--rgb), 0.8
     );
 
-    background-color: var(--color2);
+    background-color: var(--color1);
     border: none;
-    color: var(--color1);
+    color: var(--color2);
 
     &:hover {
         background-color: var(--color3-light);
