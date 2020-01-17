@@ -52,9 +52,9 @@ a {
 
     padding: $padding/2 $padding;
 
-    .row {
+    /* .row {
         align-items: flex-start;
-    }
+    } */
 
     &.fixto-fixed {
         @include background-color-rgba(
@@ -158,6 +158,7 @@ ul.dropdown-menu {
             font-size: initial;
             letter-spacing: normal;
             line-height: 1;
+            margin-top: $margin;
             margin-bottom: $margin;
             margin-left: $margin*2;
             // padding: $padding;
@@ -197,7 +198,7 @@ ul.dropdown-menu {
             }
         }
 
-        &.contact a {
+        &.contact a {            
             font-size: initial;
 
             &:before {
