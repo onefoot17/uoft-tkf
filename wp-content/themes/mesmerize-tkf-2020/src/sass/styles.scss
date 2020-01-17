@@ -4,11 +4,11 @@
 
 html,
 body {
-    background-color: var(--color1);
+    background-color: var(--white);
 }
 
 body {
-    color: var(--color2);
+    color: var(--color2-dark);
     font-family: $font-family;
 }
 
@@ -20,6 +20,7 @@ h4,
 h5,
 .comment-author .fn,
 h6 {
+    color: var(--color2);
     font-family: $font-family;
     letter-spacing: normal;
 }
@@ -57,7 +58,7 @@ a {
 
     &.fixto-fixed {
         @include background-color-rgba(
-            var(--color1--rgb), 0.9
+            var(--white--rgb), 0.9
         );
     }
 }
@@ -153,18 +154,32 @@ ul.dropdown-menu {
         padding: 0;
         
         > a {
+            color: var(--color2-dark);
             font-size: initial;
             letter-spacing: normal;
             line-height: 1;
-            padding: $padding;
+            margin-bottom: $margin;
+            margin-left: $margin*2;
+            // padding: $padding;
             text-transform: initial;
+        }
+
+        &:hover > a {
+            color: var(--color2);
         }
             
         .sub-menu {
-            background-color: var(--color1);
+            background-color: var(--color2);
 
-            li > a {
-                color: var(--color2);
+            li {
+                > a {
+                    color: var(--white);
+                    margin: 0;
+                }
+
+                &:hover > a {
+                    color: var(--color3);
+                }
             }
         }
 
@@ -204,84 +219,91 @@ ul.dropdown-menu {
         }
     }
     
+    // Home page
     &.active-line-bottom > li:not(.current-menu-item):not(.current_page_item),
     &.default > li:not(.current-menu-item):not(.current_page_item) {
         &:hover > a {
-            @include box-shadow-rgba(
+            /* @include box-shadow-rgba(
                 0px,
                 0px,
                 3px,
                 0px,
                 var(--black--rgb), 0.8
-            );
-            @include text-shadow-rgba(
+            ); */
+            /* @include text-shadow-rgba(
                 0px,
                 0px,
                 3px,
                 var(--black--rgb), 0.8
-            );
+            ); */
     
-            background-color: var(--color1);
-            color: var(--color1);
+            // background-color: var(--color1);
+            color: var(--color2);
 
             .fixto-fixed & {
-                @include box-shadow-rgba(
+                /* @include box-shadow-rgba(
                     0px,
                     0px,
                     3px,
                     0px,
                     var(--black--rgb), 0.8
-                );
-                @include text-shadow-rgba(
+                ); */
+                /* @include text-shadow-rgba(
                     0px,
                     0px,
                     3px,
                     var(--black--rgb), 0.8
-                );
+                ); */
         
-                background-color: var(--color1);
-                color: var(--color1);
+                // background-color: var(--color1);
+                color: var(--color2);
             }
         }
         
         > a {
-            @include background-color-rgba(
+            /* @include background-color-rgba(
                 var(--color1--rgb), .75
-            );
-            @include box-shadow-rgba(
+            ); */
+            /* @include box-shadow-rgba(
                 0px,
                 0px,
                 3px,
                 0px,
                 var(--color3--rgb), 0.75
-            );
-            @include text-shadow-rgba(
+            ); */
+            /* @include text-shadow-rgba(
                 0px,
                 0px,
                 0px,
                 var(--color1--rgb), 0.8
-            );
+            ); */
         
-            border-radius: 5px;
+            // border-radius: 5px;
             color: var(--color2-dark);
-            margin: $margin/4 $margin/2;
-            padding: $padding/2 $padding*2;
+            // margin-bottom: $margin;
+            // margin-left: $margin*2;
+            // padding: $padding/2 $padding*2;
 
             .fixto-fixed & {
-                @include box-shadow-rgba(
+                /* @include box-shadow-rgba(
                     0px,
                     0px,
                     3px,
                     0px,
                     var(--color2--rgb), 0.75
-                );
+                ); */
                 
-                background-color: transparent;
-                color: var(--color2);
-                text-shadow: none;
+                // background-color: transparent;
+                // color: var(--color2);
+                // text-shadow: none;
             }
         }
     }
+}
+
+// Other pages
+ul.dropdown-menu.simple-menu-items > .current_page_item > a {
+    color: var(--color2);
 }
 
 .header-homepage:not(.header-slide) {
@@ -297,18 +319,19 @@ ul.dropdown-menu {
 
 .header-content .align-holder {
     @include background-color-rgba(
-        var(--color1--rgb), .75
+        var(--white--rgb), .75
     );
-    @include box-shadow-rgba(
+    /* @include box-shadow-rgba(
         0px,
         0px,
         3px,
         0px,
         var(--color3--rgb), 0.8
-    );
+    ); */
 
     border-radius: 5px;
     padding: $padding*2;
+    padding-top: 0;
 }
 
 h1.hero-title > *,
@@ -334,14 +357,15 @@ p.header-subtitle {
 
 h1.hero-title {
     line-height: 1;
-    margin-bottom: $margin;
+    margin-bottom: $margin*2;
     
     > span {
         font-weight: 100;
         margin-bottom: $margin/2;
     }
-
+    
     b {
+        color: var(--color3);
         font-size: 1.5rem;
         font-weight: 100;
     }
@@ -351,16 +375,18 @@ p.header-subtitle {
     > span > span {
         display: block;
         margin: $margin/2;
+        margin-bottom: $margin/4;
     }
 
     > span > b {
+        color: var(--color2-dark);
         display: inline-block;
         margin: $margin/2;
     }
 }
 
 .mesmerize-front-page .header-separator path.svg-white-bg {
-    fill: var(--color2-dark) !important;
+    fill: var(--color3-light) !important;
     opacity: 0.1;
 }
 
@@ -383,7 +409,7 @@ p.header-subtitle {
 
         &::before {
             @include background-color-rgba(
-                var(--color2-dark--rgb), .8
+                var(--color3-light--rgb), .3
             )
             content: "";
             display: inline-block;
@@ -401,7 +427,7 @@ p.header-subtitle {
 
             .spaced-cols [data-type="column"] {
                 @include background-color-rgba(
-                    var(--color2--rgb), .75
+                    var(--white--rgb), .9
                 );
                 @include box-shadow-rgba(
                     0px,
@@ -410,15 +436,14 @@ p.header-subtitle {
                     0px,
                     var(--color1--rgb), 0.75
                 );
-                @include text-shadow-rgba(
+                /* @include text-shadow-rgba(
                     0px,
                     0px,
                     3px,
                     var(--color2-dark--rgb), 0.8
-                );
+                ); */
             
-                border-radius: 5px;
-                color: var(--color1);
+                color: var(--color2-dark);
                 display: inline-block;
                 padding: $padding;
 
@@ -426,7 +451,7 @@ p.header-subtitle {
         }
 
         h5 {
-            color: var(--color1);
+            color: var(--color2-dark);
             font-size: 1.2rem;
         }
     }
@@ -437,25 +462,25 @@ i.fa.icon.reverse.color1,
 .button.white.outline,
 .button.color1 {
     @include background-color-rgba(
-        var(--color1--rgb), .5
+        var(--color3-light--rgb), .9
     );
-    @include box-shadow-rgba(
+    /* @include box-shadow-rgba(
         0px,
         0px,
         3px,
         0px,
-        var(--color3--rgb), 0.8
-    );
-    @include text-shadow-rgba(
+        var(--color2-dark--rgb), 0.8
+    ); */
+    /* @include text-shadow-rgba(
         0px,
         0px,
         3px,
-        var(--color1--rgb), 0.8
-    );
+        var(--color2-dark--rgb), 0.8
+    ); */
 
-    background-color: var(--color1);
+    // background-color: var(--color1);
     border: none;
-    color: var(--color2-dark);
+    color: var(--white);
 
     &:hover {
         @include box-shadow-rgba(
