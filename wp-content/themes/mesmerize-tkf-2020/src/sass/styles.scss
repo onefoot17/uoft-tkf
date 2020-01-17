@@ -344,7 +344,7 @@ p.header-subtitle > span b {
     );
 
     border-radius: 5px;
-    color: var(--color2-dark);
+    // color: var(--color2-dark);
     display: inline-block;
 }
 
@@ -356,6 +356,7 @@ p.header-subtitle {
 }
 
 h1.hero-title {
+    color: var(--color2-dark);
     line-height: 1;
     margin-bottom: $margin*2;
     
